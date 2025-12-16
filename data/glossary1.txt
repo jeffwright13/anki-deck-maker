@@ -1,0 +1,188 @@
+spanish	english
+abogado	lawyer
+abrazar	to cuddle/embrace
+abuela	Grandmother
+abuelo	Grandfather
+aficiones	hobbies
+afuera	outside
+agua	water
+alto	tall
+amigos	friends
+animales	animals
+años	years
+aprender	to learn
+arbol	tree
+arena	sand
+ayudar	to help
+bajo	short
+barba	beard
+beber	to drink
+bebida	drink
+bonito	pretty
+botella	bottle
+bueno	good
+buscar	to search for/ to look for
+café	coffee
+cafetería	coffee shop
+calle	street
+caminar	to walk
+cansado	tired
+carne	meat
+casa	house
+castillo	castle
+cenar	to have dinner
+chocolate	chocolate
+ciencia ficción	Science fiction
+claro	of course/ sure
+cola	tail
+coche	car
+cocinar	to cook
+comer	to eat
+comida	food
+como	how/like
+comprar	to buy
+con	with
+conducir	to drive
+correr	to run
+decir	to say
+deportes	sports
+desayunar	to have breakfast
+día	day
+domingo	Sunday
+donde	where
+dificil	difficult
+dormir	to sleep
+ducharse	to shower
+empezar	to start
+en	in
+encontrar	to find
+escuchar	to listen
+español	Spanish
+especialmente	especially
+estanque	pond
+estar	to be
+estudiar	to study
+familia	family
+fin de semana	weekend
+francés	French
+feliz	happy
+fresa	strawberry
+fumar	to smoke
+fútbol	football
+gato	cat
+grande	big
+gritar	to shout
+guapo	pretty
+gustar	to like
+habitación	room
+hablar	to speak
+helado	ice cream
+hermano	brother
+histroric	history
+hombre	man
+hongos	mushrooms
+huevos	eggs
+idea	idea
+idioma	language
+igualmente	you too/equally
+ilegal	Ilegal
+información	information
+inglés	English
+italiano	Italian
+jardín	garden
+jefe	boss
+jugar	to play
+juegos	games
+junto	together
+llamar	to call
+leche	milk
+leer	to read
+levantar	to get up
+libros	books
+madre	mother
+maestro	teacher
+más	more
+mascota	pet
+mensaje	message
+mesa	table
+mientras	while
+mirar	to look at/ to watch
+mono	monkey
+mucho	many/ a lot of
+mucho gusto	nice to meet you
+mujer	woman
+mundo	world
+música	music
+muy	very
+naranja	orange
+nariz	nose
+necesitar	to need
+negro	black
+niños	children
+noche	night
+normalmente	normally
+oficina	office
+ojos	eyes
+pagar	to pay
+parque	park
+pasar	to pass/spend
+país	country
+películas	films
+pelo	hair
+pensar	to think
+pequeña	small
+periodico	newspaper
+pero	but
+personas	people
+pescado	fish
+pies	feet
+piso	floor
+plátano	banana
+playa	beach
+poder	to be able to
+pollo	chicken
+por ejemplo	for example
+por favor	please
+por qué	why
+preocupado/a	worried
+preguntar	to ask
+propio	own
+querer	to want
+raro	rare/strange
+recibir	to receive
+recate	rescue
+reír	to laugh
+responder	to respond/answer
+revistas	magazines
+sábado	Saturday
+salgar	to go out
+salvar	to save
+secreto	secret
+seguro	sure
+sentarse	to sit
+serioso	serious
+sí	yes
+sillas	chairs
+sombrilla	beach umbrella
+sonreír	to smile
+supermercado	supermarket
+también	also
+té	tea
+television	television
+tener	to have
+terminar	to end
+típico	typical
+tipo	type
+todos	all
+trabajar	to work
+trabajo	job
+tradicional	traditional
+triste	sad
+usar	to use
+visitar	to visit
+vivir	to live
+ver	to see
+verde	green
+veteneria	Vet
+voy	to go
+zumo	juice

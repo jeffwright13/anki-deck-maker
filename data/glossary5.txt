@@ -1,0 +1,403 @@
+spanish	english
+a menudo	often
+abrazar	to hug
+abrir	to open
+aburrido	boring
+acampar	camping
+actividad	activity
+adios	goodbye
+adolescente	teenager
+afuera	outside
+ahí	there
+ahora	now
+ahorrar	to save
+aire libre	outdoors
+albañil	builder
+alcohol	alcohol
+alguien	someone
+alivio	relief
+almorzar	to have lunch
+alto	tall/high
+ambos	both
+amigo	friend
+amor	love
+año	year
+antes	before
+antipático	nasty
+apartamento	apartment
+aquí	here
+área de construcción	building site
+armario	wardrobe
+atlético	athletic
+ayudar	to help
+baño	bathroom
+barato	cheap
+barba	beard
+barrio	neighbourhood
+bebé	baby
+beber	to drink
+beneficio	benefit
+besar	to kiss
+bicicleta	bicycle
+bien	well
+blanco	white
+bocadillo	sandwich
+bolso	bag
+brillar	to shine
+buena forma	good shape
+bueno	good
+cabeza	head
+cada	each
+café	coffee
+calidad	quality
+cama	bed
+cámara	camera
+cambiar	to change
+caminar	to walk
+campo	countryside
+cansado	tired
+cara	face
+cárcel	prison
+casa	house
+casi	almost
+causa	cause
+celebrar	to celebrate
+cena	dinner
+cerca	near
+chocolate	chocolate
+cinco	five
+cigarillo	cigarette
+cine	cinema
+claro	sure
+cliente	client
+cocina	kitchen
+cocinar	to cook
+comedor	dining room
+comentar	to comment
+comer	to eat
+como	like/as
+comprar	to buy
+con	with
+conducir	to drive
+construcción	construction
+construir	to build
+contratar	to contract
+corazón	heart
+correr	to run
+cosa	thing
+costar	to cost
+cuando	when
+cubrir	to cover
+cuerpo	body
+culpa	fault
+cuna	crib
+decisión	decision
+de inmediato	immediately
+de	of
+de nuevo	again
+de repente	suddenly
+decorador	decorator
+decorar	to decorate
+delgado	slim
+deporte	sport
+desayunar	to eat breakfast
+descansar	to rest
+descubrir	to discover
+deseo	wish/desire
+despedido	fired
+despierto	awake
+después	after
+devastado	devastated
+día	day
+diez	ten
+diferente	different
+difícil	difficult
+dinero	money
+divertido	fun
+doble	double
+domingo	Sunday
+donde	where
+dos	two
+ducharse	to shower
+dulce	sweet
+dulces	sweets
+durante	during
+educado	polite
+egoísta	selfish
+ejercicio	exercise
+embarazada	pregnant
+empezar	to start
+empleado	employee
+empresa	company
+encender	to turn on
+encontrar	to find
+enfadado	annoyed
+enorme	enormous
+entender	to understand
+entonces	then
+entrar	to enter
+entrenadora	trainer
+equipo	team
+en serio	seriously
+esconder	to hide
+espacio	space
+especialmente	especially
+esperar	to wait
+estar	to be
+estar en buena forma	to be in good shape
+estudiar	to study
+excelente	excellent
+experiencia	experience
+explicar	to explain
+extraño	strange
+fácil	easy
+familia	family
+fantastico	fantastic
+favorito	favourite
+feliz	happy
+finalmente	finally
+fruta	fruit
+fuente	source
+fuera	outside
+fuerte	strong
+fumar	to smoke
+fútbol	football
+futuro	future
+gafas	glasses
+ganar	to gain/earn/win
+garaje	garage
+gastar	to spend
+genial	great
+gimnasio	gym
+girar	to turn
+golpear	to hit
+gracias	thank you
+grande	big
+gratis	free
+grave	serious
+gritar	to shout
+grupo	group
+guardián	security guard
+gustar	to like
+habitación	bedroom
+hablar	to speak/talk
+hacer	to do/make
+hasta	until
+hay	there is
+hermano	brother
+hijo	son
+historia	story
+hola	hello
+hora	hour
+huevo	egg
+idea	idea
+ignorar	to ignore
+ilegal	illegal
+imaginación	imagination
+importante	important
+incidente	incident
+incómodo	uncomfortable
+infierno	hell
+inmediatamente	immediately
+intentar	to try
+interesante	interesting
+inútil	useless
+investigar	to investigate
+ir	to go
+jardín	garden
+jefe	boss
+joven	young
+jugar	to play
+junto	together
+justicia	justice
+ladrón	thief
+lago	large
+largo	long
+las afueras	the outskirts
+leer	to read
+levantarse	to get up
+libro	book
+limón	lemon
+limpiar	to clean
+llamar	to call
+llegar	to arrive
+llevar	to wear
+lo siento	sorry
+loco	crazy
+luego	then
+luz	light
+madre	mother
+mal	bad
+mañana	morning/tomorrow
+manera	manner
+máquina	machine
+marrón	brown
+mascota	pet
+más	more
+material	material
+mayor	elder
+médico	doctor
+mejor	better
+mes	month
+mesa	table
+mientras	while
+minuto	minute
+mirar	to look at/ to watch
+mismo	same
+mitad	half
+montaña	mountain
+montar	to ride/ to mount
+mucho	a lot
+mueble	furniture
+muy	very
+nadar	to swim
+nadie	nobody
+necesario	necessary
+necesitar	to need
+negro	black
+nepalí	Nepalese
+nieto	grandchild
+ni siquiera	not even
+noche	night
+normalmente	normally
+nosotros	us
+noticias	news
+novia	girlfriend
+nuestro	our
+nuevo	new
+nueve	nine
+nunca	never
+o	or
+ocho	eight
+odiar	to hate
+ojo	eye
+opinión	opinion
+ordenar	to order
+ordenador	computer
+orgulloso	proud
+otra vez	again
+otro	other
+padre	father
+para	for
+parecer	to seem
+pared	wall
+pantalla	screen
+pasar	to spend/ to pass
+pasatiempo	hobby
+pastel	cake
+película	film
+pelo	hair
+pensar	to think
+pequeña	small
+perdida	waste
+periódico	newspaper
+pero	but
+perra	bitch
+persona	person
+piña	pineapple
+piso	floor
+plato	plate
+poder	to be able to
+policía	police
+polideportivo	sports centre
+ponerse	to put on
+por	for
+por qué	why
+por si acaso	just in case
+porque	because
+preguntar	to ask
+preocupado	worried
+preparar	to prepare
+presentimiento	feeling
+primero	first
+principal	principal/main
+problema	problem
+pronto	soon
+propio	own
+próximo	next
+proyecto	project
+puerta	door
+qué	what
+qué tal	how are you
+quién	who
+quejarse	to complain
+querer	to want
+queso	cheese
+raro	strange
+recuperar	recover
+reír	to laugh
+relejar	to relax
+reputación	reputation
+retirarse	to retire
+robar	to steal
+robo	robbery
+ropa	clothes
+rubio	blonde
+ruido	noise
+rutina	routine
+sábado	Saturday
+sábana	sheet
+saber	to know
+sala	living room
+salir	to go out
+salud	health
+saludar	to greet
+siete	seven
+secreto	secret
+seis	six
+semana	week
+sensación	sensation
+sentir	to feel
+ser	to be
+serio	serious
+siempre	always
+silencio	silence
+silla	seat
+simplemente	simply
+sin	without
+sobre	over/about
+sol	sun
+solo	only
+sorpresa	surprise
+su	his/her/theirs
+sueldo	salary
+sueño	dream
+suerte	luck
+suficiente	sufficient
+talento	talent
+también	as well
+techo	ceiling
+televisión	television
+tener	to have
+tener que	to have to
+tenis	tennis
+terminar	to finish
+tiempo	time
+todo	all
+tomar	to take
+tortilla	Spanish omelette
+trabajador	worker
+trabajar	to work
+trabajo	work/job
+tranquilidad	tranquillity
+tranquilo	quiet
+tres	three
+triste	sad
+tunarse	to take turns
+turno	shift
+turno de noche	night shift
+único	only
+vecino	neighbour
+veinte	twenty
+ventana	window
+ver	to see
+verde	green
+verdura	vegetable
+vez	time
+vida	life
+viernes	Friday
+visitar	to visit
+vivir	to live
+volver	to return
+y	and
+zumo	juice

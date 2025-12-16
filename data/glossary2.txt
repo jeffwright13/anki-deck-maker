@@ -1,0 +1,240 @@
+spanish	english
+a veces	sometimes
+abrazar	to hug/cuddle
+abrir	to open
+aceite	oil
+adentro	inside
+ahora	now
+algo	something
+allí	there
+alto	tall
+amante	lover
+amarillo	yellow
+amigo	friend
+año	year
+aquí	here
+árbol	tree
+bailar	to dance
+bajo	short
+balcón	balcony
+baloncesto	basketball
+banco	bank
+baño	bathroom/bath
+barbacoa	BBQ
+barrio	neighbourhood
+beber	to drink
+besar	to kiss
+bonito	pretty
+brillante	shiny
+burbuja	bubble
+cada	each
+café	coffee
+caja	box
+campo	countryside
+cansado	tired
+cantar	to sing
+cama	bed
+carne	meat
+casa	house
+cena	dinner
+cepillar	to comb
+cerca	near
+cinco	five
+cine	cinema
+coche	car
+cocina	kitchen
+cocinar	to cook
+cocinero	cook
+conducir	to drive
+cuatro	four
+comenzar	to start
+comer	to eat
+comida	food
+con	with
+contiene	contains
+copa	cup
+correr	to run
+cortar	to cut
+corto	short
+crimen	crime
+dálmata	Dalmatian
+de	of
+de nuevo	again
+de repente	suddenly
+decir	to say
+delgado	slim
+deportes	sports
+después	after
+desayunar	to eat breakfast
+desayuno	breakfast
+detalles	details
+día	day
+diez	ten
+discusión	argument/discussion
+divertido	funny
+doctora	doctor
+dormir	to sleep
+dos	two
+elegante	elegant
+empezar	to start
+en	in
+enfermedad	illness
+enorme	enormous
+entender	to understand
+escribir	to write
+escuchar	to listen
+espacio	space
+españa	Spain
+especialmente	especially
+estanque	pond
+este	this
+excelente	excellent
+familia	family
+favorito	favourite
+feliz	happy
+fin de semana	weekend
+fruta	fruit
+fútbol	football
+futuro	future
+gracias	thank you
+grande	big
+gritar	to shout
+guapo	handsome
+gustar	to like
+habitaciones	rooms
+hace buen tiempo	nice weather
+hacer	to do
+hay	there is/are
+hermano	brother
+hija	daughter
+historias	stories
+hospital	hospital
+idea	idea
+inglaterra	England
+interesante	interesting
+jardín	garden
+jueves	thursday
+jugar	play
+junto	together
+labio	lip
+largo	long
+leer	to read
+lejos	far
+libre	free
+libro	book
+llamar	to call
+llegar	to arrive
+llevar	to wear
+llorar	to cry
+luego	then
+llueve	it rains
+madre	mother
+maleta	suitcase
+máquina	machine
+marrón	brown
+martes	tuesday
+media	half
+medico	doctor
+mejor	best
+mensaje	message
+mexicano	Mexican
+méxico	Mexico
+mientras	while
+minuto	minute
+mío	mine
+mirar	to look
+moderno	modern
+mucho	many
+muerta	dead
+música	music
+muy	very
+nadar	to swim
+nariz	nose
+necesitar	to need
+negro	black
+nervioso	nervous
+noticias	news
+nueve	nine
+ocho	eight
+ojo	eyes
+opción	option
+padre	father
+pájaro	bird
+pan	bread
+papa	potato
+para	for
+pareja	couple
+parque	park
+pasar	pass
+pelo	hair
+pendiente	earring
+pena	shame/pity
+pequeño	small
+periódico	newspaper
+perro	dog
+piano	piano
+piscina	swimming pool
+piso	floor
+planta	plant
+playa	beach
+poner	to put
+por favor	please
+por supuesto	of course
+porque	because
+primavera	spring
+privacidad	privacy
+preferir	to prefer
+próximo	next
+puerta	door
+que	what
+quien	who
+quitar	to take off
+regalo	present
+regresar	to return
+reír	to laugh
+ropa	clothes
+rubio	blonde
+sábado	saturday
+sala	living room
+salir	to go out
+secar	to dry
+segundo	second
+seis	six
+serio	serious
+siete	seven
+sobre	about
+sonreír	to smile
+suficiente	sufficient
+supermercado	supermarket
+también	too/also
+tarde	afternoon
+té	tea
+tecnología	technology
+televisión	television
+temporada	season
+tener	to have
+terminar	to finish
+terrible	terrible
+tiempo	time
+tipo	type
+tocar	to play
+todavía	still
+todo	all
+tomar	take
+tostada	toast
+trabajar	to work
+trabajo	work
+tráfico	traffic
+triste	sad
+tuyo	yours
+un par	a pair
+vale	ok
+veinte	twenty
+ver	to see
+viaje	journey
+vino	wine
+visitar	to visit
+vivir	to live
+voleibol	volleyball
+volver	to return
+zapato	shoe

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Generated output files
+output/*.apkg
+output/generated-cards.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Debug files
+debug-*.js
+test-*.js
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp

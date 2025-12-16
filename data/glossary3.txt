@@ -1,0 +1,242 @@
+spanish	english
+abrazar	to hug
+abril	april
+abuelo	grandfather
+abrir	to open
+adoptado	adopted
+ahora	now
+alto	tall
+amable	friendly
+amar	to love
+ambos	both
+amigo	friend
+amor	love
+año	year
+aquí	here
+ayudar	to help
+azul	blue
+a veces	sometimes
+beber	to drink
+bebida	beverage
+besar	to kiss
+bicicleta	bike
+bolsa	bag
+bonito	pretty
+buen	good
+cada	each
+café	coffee
+calor	heat
+caminar	to walk
+cantar	to sing
+cara	face
+casa	house
+centro commercial	shopping centre
+cerveza	beer
+chico	boy
+cincuenta	fifty
+cine	cinema
+ciudad	city
+claro que sí	of course
+cocina	kitchen
+coincidencia	coincidence
+comer	to eat
+comida	food
+como	like/how
+comprar	to buy
+con	with
+consejo	advice
+cosa	thing
+cuál	which
+cuando	when
+cumpleaños	birthday
+de	of
+de nuevo	again
+de repente	suddenly
+decir	to say
+demasiado	too
+desayunar	to eat breakfast
+descubrir	discover
+desear	to wish
+deseo	a wish
+después	after
+día	day
+diferencia	difference
+diferente	different
+difícil	difficult
+divertido	fun/funny
+dos	two
+ducharse	to shower
+enamorar	to fall in love
+encantar	to love
+encontrar	to find
+enfrente	in front
+enorme	enormous
+entonces	then
+entrar	to enter
+escuela	school
+eso	that
+español	Spanish
+especialmente	especially
+esperar	to wait
+estación	season
+estar	to be
+expresión	expression
+familia	family
+favorito	favourite
+feliz	happy
+fiesta	party
+foto	photo
+garaje	garage
+genial	great
+gracias	thank you
+grande	big
+gritar	to shout
+grupo	group
+gustar	to like
+hablar	to speak
+hace	ago
+hacer	to do/make
+hasta	until
+hay	there is
+hermano	brother
+hermana	sister
+hijo	son/child
+hola	hello
+hombre	man
+hora	time/hour
+hoy	today
+hoyuelos	dimples
+huevo	egg
+idea	idea
+imposible	impossible
+increíble	incredible
+ingeniero	engineer
+ir	to go
+italia	Italy
+jueves	Thursday
+junto	together
+libre	free
+llamar	to call
+llegar	to arrive
+llorar	to cry
+lloviendo	raining
+levantar	to get up
+listo	ready
+lo siento	I’m sorry
+madre	mother
+mañana	tomorrow
+marrón	brown
+más	more
+matemáticas	maths
+mayor	older
+mejor	best
+mentira	lie
+mientras	while
+minuto	minute
+mirar	to watch
+mismo	same
+montar	to ride
+moto	motorbike
+mucho	many
+mujer	woman
+mundo	world
+música	music
+muy	very
+nada	nothing
+naranja	orange
+nariz	nose
+necesitar	to need
+negro	black
+nombre	name
+novio	boyfriend
+nueve	nine
+nuevo	new
+ojo	eye
+opción	option
+orfanato	orphanage
+otro	other
+padre	dad
+para	for
+pasar	to spend
+pasatiempo	hobby
+pastel	cake
+pausa	pause
+película	film
+pelo	hair
+parecer	to seem like
+pensar	to think
+perfecto	perfect
+pero	but
+piscina	swimming pool
+pista de tenis	tennis court
+plátano	banana
+popular	popular
+porque	because
+por	for
+posible	possible
+primavera	spring
+primero	first
+próximo	next
+poder	to be able to
+ponerse	to put on
+por ejemplo	for example
+por favor	please
+preguntar	to ask
+problema	problem
+puerta	door
+rizado	curly
+qué tal	how are you?
+querer	to want
+quién	who
+quizás	perhaps
+regalo	present
+reír	to laugh
+reloj	watch
+responder	to respond
+ropa	clothes
+saber	to know
+sala	living room
+salir	to go out
+secreto	secret
+segundo	second
+seguro	sure
+sentir	to feel
+ser	to be
+serio	serious
+sevilla	Seville
+si	if
+sí	yes
+similar	similar
+sobre	about
+soltero	single
+soplar	to blow
+su	his/her
+también	too
+tarde	afternoon
+té	tea
+teléfono	telephone
+tener	to have
+tiempo	time
+tío	uncle
+tocar	to touch
+todos	all
+tomar	to take
+tomate	tomato
+tostada	toast
+total	total
+trabajar	to work
+trabajo	job
+treinta y cinco	thirty five
+triste	sad
+vale	ok
+veintidos	twenty two
+veintinueve	twenty nine
+veintiseis	twenty six
+vela	candle
+ver	to see
+vino	wine
+visitar	to visit
+vivir	to live
+volver	to return
+y	and
+zumo	juice

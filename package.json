@@ -1,0 +1,20 @@
+{
+  "name": "anki-deck-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate-glossary-deck.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "sql.js": "^1.13.0"
+  }
+}

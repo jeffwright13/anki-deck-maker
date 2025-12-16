@@ -1,0 +1,337 @@
+spanish	english
+abrigo	coat
+abrir	to open
+absurdo	absurd
+actor	actor
+actriz	actress
+a veces	sometimes
+afortunado	fortunate
+ahora	now
+al menos	at least
+alto	high/tall
+allí	there
+amar	to love
+amigo	friend
+año	year
+apartamento	apartment
+aplicar	to apply
+aquí	here
+atractivo	attractive
+autor	author
+ayudar	to help
+azul	blue
+baño	bathroom
+barato	cheap
+bebida	drink
+beber	to drink
+bien	well
+blanco	white
+bolsa	bag
+bonito	beautiful
+botón	button
+buen humor	good mood
+cada	each
+café	coffee
+cámara	camera
+cambiar	to change
+caminar	to walk
+campo	countryside
+cantar	to sing
+caro	expensive
+casa	house
+celoso	jealous
+cenar	to have dinner
+cepillar	to brush
+cerrar	to close
+chica	girl
+chico	boy
+chiste	joke
+cita	date
+ciudad	city
+coche	car
+cocina	kitchen
+comida	food
+cómodo	comfortable
+compañeros	collagues
+compromiso	commitment
+comunidad	community
+con	with
+conducir	to drive
+conmigo	with me
+contactar	to contact
+contacto	contact
+contar	to tell
+controlar	to control
+correr	to run
+cosa	thing
+creer	to believe
+crítica	critical
+cuando	when
+cuatro	four
+culpa	fault
+de	of
+de repente	suddenly
+decir	to say
+delante	in front
+delgado	slim
+demasiado	too
+departamento	department
+deporte	sport
+desayuno	breakfast
+descansar	to rest
+después	after
+día	day
+dientes	teeth
+diez	ten
+diferente	different
+difícil	difficult
+divertido	fun
+domingo	Sunday
+dos	two
+ducharse	to shower
+duda	doubt
+edificio	building
+elección	choice
+empezar	to start
+en	in
+en serio	seriously
+en frente	infront
+encantar	to love
+enfadado	annoyed
+entender	to understand
+entrar	to enter
+escalera	stairs
+escritor	writer
+escuchar	to listen
+eso	that
+espacio	space
+esperar	to wait
+estavez	this time
+estar	to be
+exactamente	exactly
+excelente	excellent
+exclusivo	exclusive
+exterior	exterior
+fácil	easy
+famoso	famous
+feliz	happy
+físico	physical
+fondo croma	green screen
+francés	French
+frenéticamente	frantically
+frío	cold
+funcionar	to function
+fútbol	football
+gobierno	government
+gracias	thank you
+grand	big
+gratis	free
+gritar	to shout
+guapo	handsome
+guiñar	to wink
+gustar	to like
+habitación	bedoom
+hablar	to speak
+hace	ago
+hacer	to do
+hacia	toward
+hambre	hunger
+hasta luego	see you later
+hay	there is
+hielo	ice
+hola	hello
+hombre	man
+hombre del tiempo	weatherman
+hora	hour
+hoy	today
+huracán	hurricane
+idea	idea
+igualmente	equally
+importante	important
+increíble	incredible
+informe	report
+intentar	to try
+ir	to go
+jefa	boss
+jugadoras	players
+junto	together
+leer	to read
+levantarse	to get up
+llamada	call
+llamar	to call
+llave	key
+llegar	to arrive
+llevar	to wear
+llevar bien	get along
+libertad	freedom
+listo	ready
+lo siento	sorry
+loco	crazy
+lunes	Monday
+madre	mother
+mañana	tomorrow
+maquilladora	makeup artist
+maquillaje	makeup
+marca	brand
+marrón	brown
+más	more
+mejor	best
+menos	less
+mientras	while
+miercoles	Wednesday
+minuto	minute
+mirar	to look
+mismo	same
+molestar	to bother
+mono	cute
+morir	to die
+moto	motorbike
+móvil	mobile
+movimiento	movement
+mucho	many
+mucho gusto	nice to meet you
+mujer	woman
+mundo	world
+música	music
+muy	very
+nada	nothing
+nadie	nobody
+natural	natural
+necesitar	to need
+negro	black
+nervioso	nervous
+ninguna	any
+no	no/not
+noche	night
+nosotros	us
+noticias	news
+novia	girlfriend
+novio	boyfriend
+nuestro	our
+nuevo	new
+obtener	to get
+oficina	office
+ojo	eye
+opción	option
+opinión	opinion
+orgulloso	proud
+otro	other
+padre	father
+país	country
+palabra	word
+pálido	pale
+pantalla	screen
+para	for
+parecer	to seem
+pared	wall
+pareja	couple
+pasar	to spend
+pasillo	corridor
+peligroso	dangerous
+pelo	hair
+pensamientos	thoughts
+pensar	to think
+pequeño	small
+perfecto	perfect
+periódico	newspaper
+pero	but
+persona	person
+pie	foot
+piel	skin
+piso	floor
+plátano	banana
+poder	to be able to
+(el) poder	the power
+policía	police
+ponerse	to put on
+popular	popular
+por	for
+por ejemplo	for example
+por favor	please
+por fin	finally
+por lo menos	at least
+porque	because
+preguntar	to ask
+preocupado	worried
+preparar	to prepare
+preocuparse	to worry
+presentadores	presenters
+primero	first
+probar	to try
+problema	problem
+prueba	test
+puerta	door
+querer	to want
+quince	fifteen
+quizás	perhaps
+raro	strange
+realmente	really
+regular	regular
+reír	to laugh
+relación	relationship
+reloj	watch
+repetir	to repeat
+reportar	to report
+respetuoso	respectful
+responder	to respond
+respuesta	reponse
+restaurantes	restaurant
+ropa	clothes
+saber	to know
+sala	living room
+salir	to go out
+secreto	secret
+sensible	sensitive
+sentarse	to sit
+ser	to be
+si	if
+sí	yes
+siempre	always
+siguiente	following
+silencio	silence
+silla	seat
+sobre	over
+sofa	sofa
+sol	sun
+solo	alone
+sonreír	to smile
+sorprendido	surprised
+su	his/her
+sueldo	salary
+suerte	lucky
+suficiente	sufficient
+super	super
+también	also
+tarde	late
+teléfono	telephone
+televisión	television
+temprano	early
+tener	to have
+tiempo	weather
+tipo	type
+todo	all
+tomar	to drink
+tornado	tornado
+trabajo	job
+traje	suit
+tres	three
+triste	sad
+tristemente	sadly
+último	final
+única	only
+usar	to use
+útil	useful
+vale	ok
+ventana	window
+ventanilla	window (in a car)
+ver	to see
+verano	summer
+verde	green
+vestido	dress
+vez	time
+vida	life
+vino	wine
+visitar	to visit
+vivir	to live
+y	and
+zapatos	shoes
