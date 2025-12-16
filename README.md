@@ -6,7 +6,7 @@ A Node.js tool to generate Anki flashcard decks from Spanish glossary files. Cre
 
 - 📚 **Glossary Processing**: Transcribes and normalizes glossary screenshots into TSV format
 - 🎴 **Dual Card Types**: Recognition (Spanish → English) and Production (English → Spanish)
-- 🗂️ **Nested Deck Structure**: Organized under `Short Spanish Stories A1::Glossaries` with subdecks for each glossary
+- 🗂️ **Hierarchical Deck Structure**: Up to 5 levels of nesting based on folder structure in `data/` directory
 - 🎯 **Direction Indicators**: Clear "ES → EN" / "EN → ES" labels on every card
 - ✅ **Quality Assurance**: Automated QA scanning for typos, empty translations, and duplicates
 - 📦 **Anki Compatible**: Generates proper `.apkg` files with full database schema
@@ -29,22 +29,57 @@ npm install
 
 ### Usage
 
-1. **Prepare glossary files** in `data/` directory as TSV format:
+1. **Organize glossary files** in `data/` directory using folder hierarchy:
+   ```
+   data/
+   ├── animals/
+   │   ├── domestic/
+   │   │   ├── pets.tsv
+   │   │   └── farm.tsv
+   │   └── wild/
+   │       └── forest.tsv
+   ├── food/
+   │   ├── fruits.tsv
+   │   └── vegetables.tsv
+   └── verbs/
+       ├── regular.tsv
+       └── irregular.tsv
+   ```
+
+   This should result in the following decks:
+   - animals
+   - food
+   - verbs
+
+2. **Format TSV files** with Spanish and English columns:
    ```
    spanish	english
-   hola	hello
-   adiós	goodbye
+   perro	dog
+   gato	cat
    ```
 
-2. **Generate Anki deck**:
+3. **Generate Anki deck**:
    ```bash
-   node generate-glossary-deck.js
+   node generate-decks.js
    ```
 
-3. **Import into Anki**:
+   **Targeted Generation** (optional):
+   ```bash
+   # Generate only specific folder
+   node generate-decks.js Animals
+   node generate-decks.js Food
+   ```
+
+   **Or use npm script**:
+   ```bash
+   npm run generate
+   npm run generate -- Animals
+   ```
+
+4. **Import into Anki**:
    - Open Anki
    - File → Import
-   - Select `output/Short-Spanish-Stories-A1-Glossaries.apkg`
+   - Select `output/Spanish-Vocabulary-Hierarchical.apkg`
 
 ## Project Structure
 
@@ -58,10 +93,13 @@ anki-deck-maker/
 │   └── glossary5.txt
 ├── lib/                     # Core library files
 │   └── anki-generator.js    # Anki .apkg generation engine
-├── output/                  # Generated files
-│   ├── Short-Spanish-Stories-A1-Glossaries.apkg
+├── debug/                   # Debug files (safe from deletion)
 │   └── generated-cards.json
-├── generate-glossary-deck.js # Main generation script
+├── output/                  # Generated .apkg files
+│   ├── Animals.apkg
+│   ├── Food.apkg
+│   └── Spanish-Vocabulary-Hierarchical.apkg
+├── generate-decks.js        # Main generation script
 ├── package.json
 └── README.md
 ```
@@ -86,26 +124,49 @@ buenos días	good morning
 
 ## Generated Deck Structure
 
-The tool creates a nested deck structure:
+The tool creates separate top-level decks named after your top-level folders, with hierarchical subdecks:
 
 ```
-Short Spanish Stories A1::Glossaries
-├── Glossary 1
+Animals
+├── domestic
+│   ├── pets
+│   │   ├── Recognition (Spanish → English)
+│   │   └── Production (English → Spanish)
+│   └── farm
+│       ├── Recognition (Spanish → English)
+│       └── Production (English → Spanish)
+└── wild
+    └── forest
+        ├── Recognition (Spanish → English)
+        └── Production (English → Spanish)
+
+Food
+├── fruits
 │   ├── Recognition (Spanish → English)
 │   └── Production (English → Spanish)
-├── Glossary 2
-│   ├── Recognition (Spanish → English)
-│   └── Production (English → Spanish)
-├── Glossary 3
-│   ├── Recognition (Spanish → English)
-│   └── Production (English → Spanish)
-├── Glossary 4
-│   ├── Recognition (Spanish → English)
-│   └── Production (English → Spanish)
-└── Glossary 5
+└── vegetables
     ├── Recognition (Spanish → English)
     └── Production (English → Spanish)
+
+Spanish_Verbs
+├── regular
+│   ├── Recognition (Spanish → English)
+│   └── Production (English → Spanish)
+└── irregular
+    ├── Recognition (Spanish → English)
+    └── Production (English → Spanish)
+
+Spanish Glossaries (for files in root data/ directory)
+├── Recognition (Spanish → English)
+└── Production (English → Spanish)
 ```
+
+**Features:**
+- **Multiple top-level decks** - Each top-level folder becomes a separate deck
+- **Up to 5 levels** of nesting supported
+- **Folder hierarchy** directly maps to deck hierarchy
+- **Recognition/Production** subdecks automatically created for each TSV file
+- **Flexible naming** - use any folder structure that works for you
 
 ## Card Design
 
@@ -139,10 +200,11 @@ hola
 ### Dependencies
 - `sql.js` - SQLite database creation
 - `jszip` - .apkg file generation
+- `jest` - Unit testing framework
 
 ### Core Components
 
-1. **`generate-glossary-deck.js`** - Main script that:
+1. **`generate-decks.js`** - Main script that:
    - Reads glossary TSV files
    - Generates card data
    - Orchestrates .apkg creation
@@ -151,6 +213,47 @@ hola
    - Creates proper SQLite schema
    - Handles deck hierarchy
    - Generates .apkg files
+
+### Testing
+
+The project includes comprehensive unit tests for the hierarchical deck naming feature:
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm test -- --coverage
+
+# Run tests in watch mode
+npm run test:watch
+```
+
+#### Test Coverage
+
+- **Hierarchical Deck Naming** (`tests/hierarchical-deck-naming.test.js`):
+  - Folder structure detection
+  - Deck naming conventions
+  - File type filtering
+  - Deep nesting support (5 levels)
+  - Integration tests
+
+- **AnkiGenerator** (`tests/anki-generator.test.js`):
+  - Deck structure creation
+  - Note type configuration
+  - Database generation
+  - Error handling
+
+#### Test Structure
+
+Tests cover:
+- ✅ Root-level files → "Spanish Glossaries" deck
+- ✅ Nested files → Top-level folder name as deck
+- ✅ Deep nesting (up to 5 levels)
+- ✅ Multiple top-level directories
+- ✅ File type validation (.tsv, .txt only)
+- ✅ Card generation with proper deck hierarchy
+- ✅ Database creation with all required tables
 
 ## Quality Assurance
 

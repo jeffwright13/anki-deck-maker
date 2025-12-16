@@ -2,12 +2,14 @@
   "name": "anki-deck-maker",
   "version": "1.0.0",
   "description": "",
-  "main": "generate-glossary-deck.js",
+  "main": "generate-decks.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "generate": "node generate-decks.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +18,8 @@
   "dependencies": {
     "jszip": "^3.10.1",
     "sql.js": "^1.13.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
