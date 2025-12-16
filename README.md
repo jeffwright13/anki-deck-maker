@@ -1,14 +1,14 @@
-# Anki Deck Maker - Spanish Glossaries
+# Anki Deck Maker - Universal Flashcard Generator
 
-A Node.js tool to generate Anki flashcard decks from Spanish glossary files. Creates properly structured decks with Recognition (ES→EN) and Production (EN→ES) cards organized in nested subdecks.
+A Node.js tool to generate Anki flashcard decks from TSV glossary files. Creates properly structured decks with Recognition (listening/reading) and Production (speaking/writing) cards for any language pair or topic, organized in nested subdecks based on your folder structure.
 
 ## Features
 
-- 📚 **Glossary Processing**: Transcribes and normalizes glossary screenshots into TSV format
-- 🎴 **Dual Card Types**: Recognition (Spanish → English) and Production (English → Spanish)
+- 📚 **Flexible Content**: Process any TSV files with question/answer pairs for any topic or language
+- 🎴 **Dual Card Types**: Recognition (Term1 → Term2) and Production (Term2 → Term1)
 - 🗂️ **Hierarchical Deck Structure**: Up to 5 levels of nesting based on folder structure in `data/` directory
-- 🎯 **Direction Indicators**: Clear "ES → EN" / "EN → ES" labels on every card
-- ✅ **Quality Assurance**: Automated QA scanning for typos, empty translations, and duplicates
+- 🎯 **Clear Direction**: Automatic labeling showing the direction of each card type
+- ✅ **Quality Assurance**: Automated validation for proper formatting and completeness
 - 📦 **Anki Compatible**: Generates proper `.apkg` files with full database schema
 
 ## Quick Start
@@ -29,7 +29,7 @@ npm install
 
 ### Usage
 
-1. **Organize glossary files** in `data/` directory using folder hierarchy:
+1. **Organize your content** in the `data/` directory using your desired folder hierarchy:
    ```
    data/
    ├── animals/
@@ -46,119 +46,203 @@ npm install
        └── irregular.tsv
    ```
 
-   This should result in the following decks:
-   - animals
-   - food
-   - verbs
+   After import, this should result in 3 decks, with sub-decks, as follows:
+   - animals (no cards)
+     - domestic (no cards)
+       - pets
+         - Recognition (cards)
+         - Production (cards)
+       - farm
+         - Recognition (cards)
+         - Production (cards)
+     - wild (no cards)
+       - forest
+         - Recognition (cards)
+         - Production (cards)
+   - food (no cards)
+     - fruits
+       - Recognition (cards)
+       - Production (cards)
+     - vegetables
+       - Recognition (cards)
+       - Production (cards)
+   - verbs (cards)
+     - regular (cards)
+     - irregular (cards)
 
-2. **Format TSV files** with Spanish and English columns:
-   ```
-   spanish	english
-   perro	dog
-   gato	cat
-   ```
+2. **Format TSV files** with your two languages/topics (see detailed TSV format section below):
 
 3. **Generate Anki deck**:
+
+   **Direct Node.js execution (recommended):**
    ```bash
+   # Generate cards for all folders WITHOUT direction labels (default)
    node generate-decks.js
+
+   # Generate cards for specific folder WITHOUT direction labels
+   node generate-decks.js "animals"
+
+   # Generate cards WITH direction labels (requires header row)
+   node generate-decks.js --direction-labels
+   node generate-decks.js -d
+   node generate-decks.js "animals" --direction-labels
    ```
 
-   **Targeted Generation** (optional):
-   ```bash
-   # Generate only specific folder
-   node generate-decks.js Animals
-   node generate-decks.js Food
-   ```
-
-   **Or use npm script**:
+   **Using npm script:**
    ```bash
    npm run generate
-   npm run generate -- Animals
+   npm run generate -- animals
+   ```
+
+   **Show help:**
+   ```bash
+   node generate-decks.js --help
+   node generate-decks.js -h
    ```
 
 4. **Import into Anki**:
    - Open Anki
    - File → Import
-   - Select `output/Spanish-Vocabulary-Hierarchical.apkg`
+   - Select `output/Your-Topic-Folder.apkg` (or appropriate filename)
+
+## Command Line Options
+
+The script supports several command line options for flexible usage:
+
+### Basic Usage
+```bash
+node generate-decks.js [folder-name] [options]
+```
+
+### Arguments
+- **folder-name** (optional): Generate cards only for a specific top-level folder in the `data/` directory
+  - If omitted, processes all folders
+  - Use quotes for folder names with spaces: `"Spanish Stories"`
+
+### Options
+- `--help, -h`: Show detailed help message and usage examples
+- `--direction-labels, -d`: Enable direction labels on cards (e.g., "ES → EN")
+  - **REQUIRES**: First row in TSV must contain labels
+  - **Default**: Direction labels are DISABLED (safer, prevents lost cards)
+
+### Examples
+```bash
+# Process all folders WITHOUT direction labels (default)
+node generate-decks.js
+
+# Process specific folder WITHOUT direction labels
+node generate-decks.js animals
+node generate-decks.js "Spanish Stories"
+
+# Process WITH direction labels (requires header row)
+node generate-decks.js --direction-labels
+node generate-decks.js -d
+node generate-decks.js animals --direction-labels
+
+# Show help
+node generate-decks.js --help
+```
+
+### Output
+- Generated `.apkg` files are saved to the `output/` directory
+- Debug information is saved to `debug/generated-cards.json`
+- Console output shows progress and statistics
 
 ## Project Structure
 
 ```
 anki-deck-maker/
-├── data/                    # Glossary TSV files
-│   ├── glossary1.txt
-│   ├── glossary2.txt
-│   ├── glossary3.txt
-│   ├── glossary4.txt
-│   └── glossary5.txt
+├── data/                    # Your TSV files
+│   ├── topic1/
+│   │   ├── basic.tsv
+│   │   └── advanced.tsv
+│   ├── topic2/
+│   │   └── vocabulary.tsv
+│   └── topic3.tsv
 ├── lib/                     # Core library files
 │   └── anki-generator.js    # Anki .apkg generation engine
 ├── debug/                   # Debug files (safe from deletion)
 │   └── generated-cards.json
 ├── output/                  # Generated .apkg files
-│   ├── Animals.apkg
-│   ├── Food.apkg
-│   └── Spanish-Vocabulary-Hierarchical.apkg
+│   ├── topic1.apkg
+│   ├── topic2.apkg
+│   └── Your-Topic-Folder.apkg
 ├── generate-decks.js        # Main generation script
 ├── package.json
 └── README.md
 ```
 
-## Glossary Format
+## TSV File Format
 
-Glossary files should be TSV (tab-separated values) with the following format:
+Your content files should be TSV (tab-separated values) with the following format:
 
 ```tsv
 spanish	english
-hola	hello
-adiós	goodbye
-buenos días	good morning
+hello	hola
+goodbye	adiós
 ```
 
-**Requirements:**
-- Header row: `spanish<TAB>english`
-- Spanish terms: lowercase (accents preserved), trimmed
-- English terms: case preserved, trimmed
+### File Requirements
+- **File Extension**: `.tsv` or `.txt`
+- **Encoding**: UTF-8 (essential for special characters)
+- **Header row**: `Label1<TAB>Label2` - **OPTIONAL**, only needed for direction labels
+- **Data rows**: One entry per line with tab separator
+- **First column**: Your first language/topic (lowercase recommended, accents preserved)
+- **Second column**: Your second language/topic (case preserved)
 - No blank lines
-- One entry per line
+
+### Header Row Function (Optional)
+The header row defines the direction labels that appear on each card when using the `--direction-labels` flag:
+- **Recognition cards** display: "Label1 → Label2"
+- **Production cards** display: "Label2 → Label1"
+
+**Important**: Header row is only required when using `--direction-labels`. Without this flag, the header row is ignored.
+
+### Language Pair Examples
+```tsv
+# Spanish → English
+spanish	english
+hola	hello
+adiós	goodbye
+
+# French → English
+français	english
+bonjour	hello
+au revoir	goodbye
+
+# Term → Definition
+term	definition
+photosynthesis	process by which plants make food
+```
+
+### Content Guidelines
+- **Base forms**: Use verb infinitives ("to eat", not "eating")
+- **No articles**: Use "house", not "the house" (unless essential)
+- **Multiple meanings**: Use slash separator ("house/home")
+- **Context hints**: Add brief parenthetical notes when needed
+- **Special characters**: Include proper accents (á, é, í, ó, ú, ñ, etc.)
 
 ## Generated Deck Structure
 
-The tool creates separate top-level decks named after your top-level folders, with hierarchical subdecks:
+The tool creates separate top-level decks named after your top-level folders, with hierarchical subdecks. Each TSV file generates two subdecks:
 
 ```
-Animals
-├── domestic
-│   ├── pets
-│   │   ├── Recognition (Spanish → English)
-│   │   └── Production (English → Spanish)
-│   └── farm
-│       ├── Recognition (Spanish → English)
-│       └── Production (English → Spanish)
-└── wild
-    └── forest
-        ├── Recognition (Spanish → English)
-        └── Production (English → Spanish)
+Topic1
+├── basic
+│   ├── Recognition (Term1 → Term2)
+│   └── Production (Term2 → Term1)
+└── advanced
+    ├── Recognition (Term1 → Term2)
+    └── Production (Term2 → Term1)
 
-Food
-├── fruits
-│   ├── Recognition (Spanish → English)
-│   └── Production (English → Spanish)
-└── vegetables
-    ├── Recognition (Spanish → English)
-    └── Production (English → Spanish)
+Topic2
+└── vocabulary
+    ├── Recognition (Term1 → Term2)
+    └── Production (Term2 → Term1)
 
-Spanish_Verbs
-├── regular
-│   ├── Recognition (Spanish → English)
-│   └── Production (English → Spanish)
-└── irregular
-    ├── Recognition (Spanish → English)
-    └── Production (English → Spanish)
-
-Spanish Glossaries (for files in root data/ directory)
-├── Recognition (Spanish → English)
-└── Production (English → Spanish)
+Root Level Files (for files directly in data/ directory)
+├── Recognition (Term1 → Term2)
+└── Production (Term2 → Term1)
 ```
 
 **Features:**
@@ -171,24 +255,24 @@ Spanish Glossaries (for files in root data/ directory)
 ## Card Design
 
 Each card includes:
-- **Direction indicator**: "ES → EN" or "EN → ES" (small, italic, gray)
+- **Direction indicator**: "Term1 → Term2" or "Term2 → Term1" (small, italic, gray)
 - **Question**: Main vocabulary term
-- **Answer**: Translation
+- **Answer**: Translation or corresponding term
 
 ### Example Cards
 
-**Recognition Card (ES → EN):**
+**Recognition Card (Term1 → Term2):**
 ```
-ES → EN
+Term1 → Term2
 
 hola
 ─────
 hello
 ```
 
-**Production Card (EN → ES):**
+**Production Card (Term2 → Term1):**
 ```
-EN → ES
+Term2 → Term1
 
 hello
 ─────
@@ -205,8 +289,8 @@ hola
 ### Core Components
 
 1. **`generate-decks.js`** - Main script that:
-   - Reads glossary TSV files
-   - Generates card data
+   - Reads TSV files from data/ directory
+   - Generates card data for both directions
    - Orchestrates .apkg creation
 
 2. **`lib/anki-generator.js`** - Anki database engine that:
@@ -247,7 +331,7 @@ npm run test:watch
 #### Test Structure
 
 Tests cover:
-- ✅ Root-level files → "Spanish Glossaries" deck
+- ✅ Root-level files → Root level deck
 - ✅ Nested files → Top-level folder name as deck
 - ✅ Deep nesting (up to 5 levels)
 - ✅ Multiple top-level directories
@@ -257,11 +341,11 @@ Tests cover:
 
 ## Quality Assurance
 
-The tool includes automated QA checks:
-- Empty Spanish/English fields
-- Duplicate Spanish terms
-- Suspicious translations (very short/long)
-- OCR artifacts and formatting issues
+The tool includes automated validation checks:
+- Empty fields in either column
+- Duplicate terms in first column
+- Formatting issues and irregularities
+- File structure validation
 
 ## License
 

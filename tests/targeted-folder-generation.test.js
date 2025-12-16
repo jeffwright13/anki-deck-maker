@@ -133,8 +133,8 @@ describe('Targeted Folder Generation', () => {
             let allCards = [];
 
             files.forEach(file => {
-                const entries = readGlossaryTSV(file.filePath);
-                const cards = generateCards(entries, `${file.deckPath.split('/')[0]}::${file.fileName}`, 3);
+                const { entries, header } = readGlossaryTSV(file.filePath);
+                const cards = generateCards(entries,  `${file.deckPath.split('/')[0]}::${file.fileName}`, 3, null, false);
                 allCards = allCards.concat(cards);
             });
 
@@ -182,8 +182,8 @@ describe('Targeted Folder Generation', () => {
             let allCards = [];
 
             files.forEach(file => {
-                const entries = readGlossaryTSV(file.filePath);
-                const cards = generateCards(entries, `${file.deckPath.split('/')[0]}::${file.fileName}`, 2);
+                const { entries, header } = readGlossaryTSV(file.filePath);
+                const cards = generateCards(entries,  `${file.deckPath.split('/')[0]}::${file.fileName}`, 2, null, false);
                 allCards = allCards.concat(cards);
             });
 
@@ -211,8 +211,8 @@ describe('Targeted Folder Generation', () => {
             fs.writeFileSync(deepFile, 'spanish\tenglish\nprofundo\tdeep\n');
 
             const files = findTSVFiles(testDataDir, '', 'DeepFolder');
-            const entries = readGlossaryTSV(files[0].filePath);
-            const cards = generateCards(entries, `${files[0].deckPath.split('/')[0]}::${files[0].fileName}`, 5);
+            const { entries, header } = readGlossaryTSV(files[0].filePath);
+            const cards = generateCards(entries,  `${files[0].deckPath.split('/')[0]}::${files[0].fileName}`, 5, null, false);
 
             expect(cards[0].deck).toBe('DeepFolder::deep::Recognition');
             expect(cards[1].deck).toBe('DeepFolder::deep::Production');

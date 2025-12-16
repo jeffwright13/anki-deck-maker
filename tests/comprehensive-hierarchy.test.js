@@ -44,8 +44,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             });
 
             // Test card generation
-            const entries = readGlossaryTSV(deepFile);
-            const cards = generateCards(entries, files[0].deckPath, 5);
+            const { entries, header } = readGlossaryTSV(deepFile);
+            const cards = generateCards(entries,  files[0].deckPath, 5, null, false);
 
             expect(cards).toHaveLength(2);
             expect(cards[0].deck).toBe('Level1/Level2/Level3/Level4/Level5::Recognition');
@@ -93,8 +93,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             let allCards = [];
 
             files.forEach(file => {
-                const entries = readGlossaryTSV(file.filePath);
-                const cards = generateCards(entries, `${file.deckPath}/${file.fileName}`, 2);
+                const { entries, header } = readGlossaryTSV(file.filePath);
+                const cards = generateCards(entries,  `${file.deckPath}/${file.fileName}`, 2, null, false);
                 allCards = allCards.concat(cards);
             });
 
@@ -137,8 +137,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             let allCards = [];
 
             files.forEach(file => {
-                const entries = readGlossaryTSV(file.filePath);
-                const cards = generateCards(entries, `${file.deckPath}/${file.fileName}`, 2);
+                const { entries, header } = readGlossaryTSV(file.filePath);
+                const cards = generateCards(entries,  `${file.deckPath}/${file.fileName}`, 2, null, false);
                 allCards = allCards.concat(cards);
             });
 
@@ -160,8 +160,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             fs.writeFileSync(specialFile, 'spanish\tenglish\nespecial\tspecial\n');
 
             const files = findTSVFiles(testDataDir);
-            const entries = readGlossaryTSV(files[0].filePath);
-            const cards = generateCards(entries, `${files[0].deckPath}/${files[0].fileName}`, 2);
+            const { entries, header } = readGlossaryTSV(files[0].filePath);
+            const cards = generateCards(entries,  `${files[0].deckPath}/${files[0].fileName}`, 2, null, false);
 
             expect(cards[0].deck).toBe('Folder With Spaces-Hyphens_Underscores/special::Recognition');
         });
@@ -178,8 +178,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             fs.writeFileSync(leafFile, 'spanish\tenglish\nhoja\tleaf\n');
 
             const files = findTSVFiles(testDataDir);
-            const entries = readGlossaryTSV(files[0].filePath);
-            const cards = generateCards(entries, `${files[0].deckPath}/${files[0].fileName}`, 3);
+            const { entries, header } = readGlossaryTSV(files[0].filePath);
+            const cards = generateCards(entries,  `${files[0].deckPath}/${files[0].fileName}`, 3, null, false);
 
             expect(cards[0].deck).toBe('Level1/Level2/Level3/leaf::Recognition');
         });
@@ -202,8 +202,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             let allCards = [];
 
             files.forEach(file => {
-                const entries = readGlossaryTSV(file.filePath);
-                const cards = generateCards(entries, `${file.deckPath}/${file.fileName}`, 2);
+                const { entries, header } = readGlossaryTSV(file.filePath);
+                const cards = generateCards(entries,  `${file.deckPath}/${file.fileName}`, 2, null, false);
                 allCards = allCards.concat(cards);
             });
 
@@ -238,8 +238,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             let allCards = [];
 
             files.forEach(file => {
-                const entries = readGlossaryTSV(file.filePath);
-                const cards = generateCards(entries, `${file.deckPath}/${file.fileName}`, 2);
+                const { entries, header } = readGlossaryTSV(file.filePath);
+                const cards = generateCards(entries,  `${file.deckPath}/${file.fileName}`, 2, null, false);
                 allCards = allCards.concat(cards);
             });
 
@@ -322,8 +322,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             const files = findTSVFiles(testDataDir);
             expect(files[0].deckPath).toBe('.');
 
-            const entries = readGlossaryTSV(rootFile);
-            const cards = generateCards(entries, files[0].fileName, 1);
+            const { entries, header } = readGlossaryTSV(rootFile);
+            const cards = generateCards(entries,  files[0].fileName, 1, null, false);
 
             expect(cards[0].deck).toBe('root::Recognition');
             expect(cards[1].deck).toBe('root::Production');
@@ -363,8 +363,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             let allCards = [];
 
             files.forEach(file => {
-                const entries = readGlossaryTSV(file.filePath);
-                const cards = generateCards(entries, `${file.deckPath}/${file.fileName}`, 3);
+                const { entries, header } = readGlossaryTSV(file.filePath);
+                const cards = generateCards(entries,  `${file.deckPath}/${file.fileName}`, 3, null, false);
                 allCards = allCards.concat(cards);
             });
 
@@ -407,8 +407,8 @@ describe('Comprehensive Hierarchical Deck Structure', () => {
             let allCards = [];
 
             files.forEach(file => {
-                const entries = readGlossaryTSV(file.filePath);
-                const cards = generateCards(entries, `${file.deckPath}/${file.fileName}`, 2);
+                const { entries, header } = readGlossaryTSV(file.filePath);
+                const cards = generateCards(entries,  `${file.deckPath}/${file.fileName}`, 2, null, false);
                 allCards = allCards.concat(cards);
             });
 

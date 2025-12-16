@@ -14,7 +14,7 @@ const AnkiGenerator = require('./lib/anki-generator');
 function readGlossaryTSV(filePath) {
     if (!fs.existsSync(filePath)) {
         console.warn(`Warning: ${filePath} not found, skipping`);
-        return [];
+        return { entries: [], header: null };
     }
     
     const content = fs.readFileSync(filePath, 'utf-8');
@@ -22,10 +22,23 @@ function readGlossaryTSV(filePath) {
     
     if (lines.length === 0) {
         console.warn(`Warning: ${filePath} is empty`);
-        return [];
+        return { entries: [], header: null };
     }
     
-    // Skip header line
+    // Parse header line
+    const headerParts = lines[0].split('\t').map(p => p.trim());
+    let header = null;
+    
+    if (headerParts.length === 2) {
+        header = {
+            term1Label: headerParts[0],
+            term2Label: headerParts[1]
+        };
+    } else {
+        console.warn(`Warning: Invalid header format in ${filePath}: "${lines[0]}". Expected 2 columns.`);
+    }
+    
+    // Process data lines (skip header)
     const dataLines = lines.slice(1);
     const entries = [];
     
@@ -38,54 +51,66 @@ function readGlossaryTSV(filePath) {
             continue;
         }
         
-        const [spanish, english] = parts.map(p => p.trim());
+        const [term1, term2] = parts.map(p => p.trim());
         
-        if (!spanish) {
-            console.warn(`Warning: Empty Spanish term at line ${i + 2} in ${filePath}`);
+        if (!term1) {
+            console.warn(`Warning: Empty term1 at line ${i + 2} in ${filePath}`);
             continue;
         }
         
-        if (!english) {
-            console.warn(`Warning: Empty English translation for "${spanish}" at line ${i + 2} in ${filePath}`);
+        if (!term2) {
+            console.warn(`Warning: Empty term2 for "${term1}" at line ${i + 2} in ${filePath}`);
             continue;
         }
         
-        entries.push({ spanish, english });
+        entries.push({ term1, term2 });
     }
     
-    return entries;
+    return { entries, header };
 }
 
-function generateCards(entries, deckPath, depth) {
+function generateCards(entries, deckPath, depth, header, includeDirectionLabels = true) {
     const cards = [];
+    
+    // Generate direction labels based on header and option
+    let recognitionLabel, productionLabel;
+    if (includeDirectionLabels && header) {
+        recognitionLabel = `${header.term1Label} → ${header.term2Label}`;
+        productionLabel = `${header.term2Label} → ${header.term1Label}`;
+    } else {
+        recognitionLabel = '';
+        productionLabel = '';
+    }
     
     entries.forEach(entry => {
         // Handle root-level files vs subdirectory files
         let baseDeck;
         if (deckPath === '.' || deckPath === 'Root') {
             // Files in root data/ directory
-            baseDeck = 'Spanish Glossaries';
+            baseDeck = 'Vocabulary';
         } else {
             // Use the full deckPath as hierarchy (includes filename)
             baseDeck = deckPath;
         }
         
-        // Recognition card: Spanish -> English
+        // Recognition card: term1 -> term2
         cards.push({
             type: 'recognition',
             deck: `${baseDeck}::Recognition`,
-            front: entry.spanish,
-            back: entry.english,
-            tags: ['vocabulary', deckPath.replace(/\//g, '-'), 'recognition']
+            front: entry.term1,
+            back: entry.term2,
+            tags: ['vocabulary', deckPath.replace(/\//g, '-'), 'recognition'],
+            directionLabel: recognitionLabel
         });
         
-        // Production card: English -> Spanish
+        // Production card: term2 -> term1
         cards.push({
             type: 'production',
             deck: `${baseDeck}::Production`,
-            front: entry.english,
-            back: entry.spanish,
-            tags: ['vocabulary', deckPath.replace(/\//g, '-'), 'production']
+            front: entry.term2,
+            back: entry.term1,
+            tags: ['vocabulary', deckPath.replace(/\//g, '-'), 'production'],
+            directionLabel: productionLabel
         });
     });
     
@@ -141,15 +166,56 @@ function findTSVFiles(dir, basePath = '', targetFolder = null) {
     return files;
 }
 
+function showHelp() {
+    console.log(`
+Anki Deck Maker - Universal Flashcard Generator
+
+USAGE:
+  node generate-decks.js [folder-name] [options]
+
+ARGUMENTS:
+  folder-name    Optional: Generate cards only for specific top-level folder
+                 If omitted, processes all folders in data/ directory
+
+OPTIONS:
+  --help, -h              Show this help message
+  --direction-labels, -d  Enable direction labels on cards (e.g., "ES → EN")
+                          REQUIRES: First row in TSV must contain labels
+                          Default: DISABLED (no text at top of cards)
+
+OUTPUT:
+  Generated .apkg files are saved to the output/ directory
+  Debug information is saved to debug/generated-cards.json
+
+FOR MORE INFORMATION:
+  See README.md for detailed usage instructions and TSV file format
+`);
+}
+
 async function main() {
     // Get command line arguments
     const args = process.argv.slice(2);
-    const targetFolder = args[0]; // Optional: specific top-level folder to process
+    
+    // Handle help flags
+    if (args.includes('--help') || args.includes('-h')) {
+        showHelp();
+        return;
+    }
+    
+    // Parse options
+    const includeDirectionLabels = args.includes('--direction-labels') || args.includes('-d');
+    const targetFolder = args.find(arg => !arg.startsWith('--') && arg !== '-d'); // First non-option argument
     
     if (targetFolder) {
         console.log(`🚀 Generating Anki deck for folder: ${targetFolder}`);
     } else {
         console.log('🚀 Generating Anki deck from all glossary files...');
+    }
+    
+    if (includeDirectionLabels) {
+        console.log('📝 Direction labels: ENABLED');
+    } else {
+        console.log('📝 Direction labels: DISABLED');
     }
     
     const dataDir = path.join(__dirname, 'data');
@@ -174,7 +240,7 @@ async function main() {
     
     for (const file of tsvFiles) {
         console.log(`\n📖 Reading ${file.fileName}...`);
-        const entries = readGlossaryTSV(file.filePath);
+        const { entries, header } = readGlossaryTSV(file.filePath);
         
         if (entries.length === 0) {
             console.log(`  ⚠️  No entries found, skipping`);
@@ -182,6 +248,9 @@ async function main() {
         }
         
         console.log(`  ✅ Found ${entries.length} entries`);
+        if (header) {
+            console.log(`  📝 Header: ${header.term1Label} → ${header.term2Label}`);
+        }
         totalEntries += entries.length;
         
         // Generate cards for this file using uber-deck structure
@@ -195,7 +264,7 @@ async function main() {
             const topLevelFolder = file.deckPath.split('/')[0];
             deckName = `${topLevelFolder}::${file.fileName}`;
         }
-        const cards = generateCards(entries, deckName, deckName.split('::').length);
+        const cards = generateCards(entries, deckName, deckName.split('::').length, header, includeDirectionLabels);
         allCards = allCards.concat(cards);
         
         console.log(`  🎴 Generated ${cards.length} cards (${entries.length} recognition + ${entries.length} production)`);
@@ -260,7 +329,7 @@ async function main() {
         console.log(`  2. File → Import`);
         console.log(`  3. Select: ${apkgPath}`);
         console.log(`  4. Click Import`);
-        console.log(`\n🎴 Your deck will appear as "Spanish Vocabulary" with subdecks matching your folder hierarchy.`);
+        console.log(`\n🎴 Your deck will appear with your custom naming based on folder structure.`);
     } catch (error) {
         console.error(`\n❌ Error generating .apkg file:`, error);
         console.log(`\n🔧 Debug info saved to: ${jsonPath}`);

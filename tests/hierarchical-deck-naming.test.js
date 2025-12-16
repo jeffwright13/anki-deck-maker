@@ -27,8 +27,8 @@ describe('Hierarchical Deck Naming', () => {
             const testFile1 = path.join(testDataDir, 'test1.tsv');
             const testFile2 = path.join(testDataDir, 'test2.txt');
             
-            fs.writeFileSync(testFile1, 'spanish\tenglish\nhola\thello\n');
-            fs.writeFileSync(testFile2, 'spanish\tenglish\nadiós\tgoodbye\n');
+            fs.writeFileSync(testFile1, 'term1\tterm2\nhola\thello\n');
+            fs.writeFileSync(testFile2, 'term1\tterm2\nadiós\tgoodbye\n');
 
             const files = findTSVFiles(testDataDir);
 
@@ -52,7 +52,7 @@ describe('Hierarchical Deck Naming', () => {
             fs.mkdirSync(domesticDir, { recursive: true });
 
             const petsFile = path.join(domesticDir, 'pets.tsv');
-            fs.writeFileSync(petsFile, 'spanish\tenglish\nperro\tdog\n');
+            fs.writeFileSync(petsFile, 'term1\tterm2\nperro\tdog\n');
 
             const files = findTSVFiles(testDataDir);
 
@@ -71,7 +71,7 @@ describe('Hierarchical Deck Naming', () => {
             fs.mkdirSync(domesticDir, { recursive: true });
 
             const petsFile = path.join(domesticDir, 'pets.tsv');
-            fs.writeFileSync(petsFile, 'spanish\tenglish\nperro\tdog\n');
+            fs.writeFileSync(petsFile, 'term1\tterm2\nperro\tdog\n');
 
             // Create Food directory
             const foodDir = path.join(testDataDir, 'Food');
@@ -79,7 +79,7 @@ describe('Hierarchical Deck Naming', () => {
             fs.mkdirSync(fruitsDir, { recursive: true });
 
             const fruitsFile = path.join(fruitsDir, 'citrus.tsv');
-            fs.writeFileSync(fruitsFile, 'spanish\tenglish\nnaranja\torange\n');
+            fs.writeFileSync(fruitsFile, 'term1\tterm2\nnaranja\torange\n');
 
             const files = findTSVFiles(testDataDir);
 
@@ -102,7 +102,7 @@ describe('Hierarchical Deck Naming', () => {
             fs.mkdirSync(level5, { recursive: true });
 
             const deepFile = path.join(level5, 'deep.tsv');
-            fs.writeFileSync(deepFile, 'spanish\tenglish\nprofundo\tdeep\n');
+            fs.writeFileSync(deepFile, 'term1\tterm2\nprofundo\tdeep\n');
 
             const files = findTSVFiles(testDataDir);
 
@@ -121,8 +121,8 @@ describe('Hierarchical Deck Naming', () => {
             const jsonFile = path.join(testDataDir, 'invalid.json');
             const mdFile = path.join(testDataDir, 'invalid.md');
 
-            fs.writeFileSync(tsvFile, 'spanish\tenglish\nhola\thello\n');
-            fs.writeFileSync(txtFile, 'spanish\tenglish\nadiós\tgoodbye\n');
+            fs.writeFileSync(tsvFile, 'term1\tterm2\nhola\thello\n');
+            fs.writeFileSync(txtFile, 'term1\tterm2\nadiós\tgoodbye\n');
             fs.writeFileSync(jsonFile, '{"test": "data"}');
             fs.writeFileSync(mdFile, '# Markdown file');
 
@@ -142,11 +142,11 @@ describe('Hierarchical Deck Naming', () => {
     describe('generateCards', () => {
         test('should generate cards with correct deck names for root-level files', () => {
             const entries = [
-                { spanish: 'hola', english: 'hello' },
-                { spanish: 'adiós', english: 'goodbye' }
+                { term1: 'hola', term2: 'hello' },
+                { term1: 'adiós', term2: 'goodbye' }
             ];
 
-            const cards = generateCards(entries, '.', 1);
+            const cards = generateCards(entries,  '.', 1, null, false);
 
             expect(cards).toHaveLength(4); // 2 recognition + 2 production
 
@@ -154,7 +154,7 @@ describe('Hierarchical Deck Naming', () => {
             const recognitionCards = cards.filter(c => c.type === 'recognition');
             expect(recognitionCards).toHaveLength(2);
             recognitionCards.forEach(card => {
-                expect(card.deck).toBe('Spanish Glossaries::Recognition');
+                expect(card.deck).toBe('Vocabulary::Recognition');
                 expect(card.tags).toContain('vocabulary');
                 expect(card.tags).toContain('recognition');
             });
@@ -163,7 +163,7 @@ describe('Hierarchical Deck Naming', () => {
             const productionCards = cards.filter(c => c.type === 'production');
             expect(productionCards).toHaveLength(2);
             productionCards.forEach(card => {
-                expect(card.deck).toBe('Spanish Glossaries::Production');
+                expect(card.deck).toBe('Vocabulary::Production');
                 expect(card.tags).toContain('vocabulary');
                 expect(card.tags).toContain('production');
             });
@@ -171,11 +171,11 @@ describe('Hierarchical Deck Naming', () => {
 
         test('should generate cards with correct deck names for nested files', () => {
             const entries = [
-                { spanish: 'perro', english: 'dog' },
-                { spanish: 'gato', english: 'cat' }
+                { term1: 'perro', term2: 'dog' },
+                { term1: 'gato', term2: 'cat' }
             ];
 
-            const cards = generateCards(entries, 'Animals::domestic', 2);
+            const cards = generateCards(entries,  'Animals::domestic', 2, null, false);
 
             expect(cards).toHaveLength(4);
 
@@ -200,10 +200,10 @@ describe('Hierarchical Deck Naming', () => {
 
         test('should handle deep nesting deck names correctly', () => {
             const entries = [
-                { spanish: 'profundo', english: 'deep' }
+                { term1: 'profundo', term2: 'deep' }
             ];
 
-            const cards = generateCards(entries, 'Level1::Level5', 5);
+            const cards = generateCards(entries,  'Level1::Level5', 5, null, false);
 
             expect(cards).toHaveLength(2);
 
@@ -215,11 +215,11 @@ describe('Hierarchical Deck Naming', () => {
         });
 
         test('should handle different top-level folder names', () => {
-            const entries = [{ spanish: 'comida', english: 'food' }];
+            const entries = [{ term1: 'comida', term2: 'food' }];
 
-            const animalsCards = generateCards(entries, 'Animals::wild', 2);
-            const foodCards = generateCards(entries, 'Food::vegetables', 2);
-            const verbsCards = generateCards(entries, 'Spanish_Verbs::regular', 2);
+            const animalsCards = generateCards(entries,  'Animals::wild', 2, null, false);
+            const foodCards = generateCards(entries,  'Food::vegetables', 2, null, false);
+            const verbsCards = generateCards(entries,  'Spanish_Verbs::regular', 2, null, false);
 
             expect(animalsCards[0].deck).toBe('Animals::wild::Recognition');
             expect(foodCards[0].deck).toBe('Food::vegetables::Recognition');
@@ -228,10 +228,10 @@ describe('Hierarchical Deck Naming', () => {
 
         test('should generate correct front/back content', () => {
             const entries = [
-                { spanish: 'hola', english: 'hello' }
+                { term1: 'hola', term2: 'hello' }
             ];
 
-            const cards = generateCards(entries, 'Test', 1);
+            const cards = generateCards(entries,  'Test', 1, null, false);
 
             const recognitionCard = cards.find(c => c.type === 'recognition');
             const productionCard = cards.find(c => c.type === 'production');
@@ -251,28 +251,28 @@ describe('Hierarchical Deck Naming', () => {
             fs.mkdirSync(domesticDir, { recursive: true });
 
             const petsFile = path.join(domesticDir, 'animals-mammals-domestic-pets.tsv');
-            fs.writeFileSync(petsFile, 'spanish\tenglish\nperro\tdog\ngato\tcat\n');
+            fs.writeFileSync(petsFile, 'term1\tterm2\nperro\tdog\ngato\tcat\n');
 
             const foodDir = path.join(testDataDir, 'Food');
             const fruitsDir = path.join(foodDir, 'fruits');
             fs.mkdirSync(fruitsDir, { recursive: true });
 
             const fruitsFile = path.join(fruitsDir, 'food-fruits-citrus.tsv');
-            fs.writeFileSync(fruitsFile, 'spanish\tenglish\nnaranja\torange\nlimón\tlemon\n');
+            fs.writeFileSync(fruitsFile, 'term1\tterm2\nnaranja\torange\nlimón\tlemon\n');
 
             const verbsDir = path.join(testDataDir, 'Spanish_Verbs');
             fs.mkdirSync(verbsDir, { recursive: true });
 
             const regularFile = path.join(verbsDir, 'verbs-regular.tsv');
-            fs.writeFileSync(regularFile, 'spanish\tenglish\nhablar\tto speak\ncomer\tto eat\n');
+            fs.writeFileSync(regularFile, 'term1\tterm2\nhablar\tto speak\ncomer\tto eat\n');
 
             // Process files
             const tsvFiles = findTSVFiles(testDataDir);
             let allCards = [];
             
             tsvFiles.forEach(file => {
-                const entries = readGlossaryTSV(file.filePath);
-                const cards = generateCards(entries, `${file.deckPath.split('/')[0]}::${file.fileName}`, 2);
+                const { entries, header } = readGlossaryTSV(file.filePath);
+                const cards = generateCards(entries,  `${file.deckPath.split('/')[0]}::${file.fileName}`, 2, header, false, null, false);
                 allCards = allCards.concat(cards);
             });
 
