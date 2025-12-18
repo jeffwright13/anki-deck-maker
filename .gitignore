@@ -16,6 +16,7 @@ Thumbs.db
 # Debug files
 debug-*.js
 test-*.js
+debug/*.json
 
 # Logs
 *.log

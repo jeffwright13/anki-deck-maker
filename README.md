@@ -11,6 +11,48 @@ A Node.js tool to generate Anki flashcard decks from TSV glossary files. Creates
 - ✅ **Quality Assurance**: Automated validation for proper formatting and completeness
 - 📦 **Anki Compatible**: Generates proper `.apkg` files with full database schema
 
+## Cloze Mode
+
+In addition to glossary (front/back) cards, the generator supports **Cloze** notes from TSV files.
+
+### Cloze TSV Format
+
+Each non-empty line must be tab-separated:
+
+```tsv
+Text	Hint
+```
+
+Or with an explicit stable row id:
+
+```tsv
+id	Text	Hint
+```
+
+- `Text`: must include one or more cloze deletions like `{{c1::...}}`, `{{c2::...}}`, etc.
+- `Hint`: small italic hint text displayed above the cloze sentence.
+
+### Generating a Cloze Deck
+
+Place your cloze TSV files anywhere under `data/` (nested folders become nested decks), then run:
+
+```bash
+node generate-decks.js <TopLevelFolder> --cloze
+```
+
+Example:
+
+```bash
+node generate-decks.js Preterite --cloze
+```
+
+This writes:
+- `output/Preterite-cloze.apkg`
+
+Notes:
+- The generated note type name is `Cloze for <TopLevelFolder>`.
+- Each TSV row becomes a single note; Anki will generate one card per cloze index present in `Text`.
+
 ## Quick Start
 
 ### Prerequisites
@@ -76,6 +118,13 @@ npm install
 
    **Direct Node.js execution (recommended):**
    ```bash
+   # New (preferred) interface
+   node generate-decks.js --mode glossary
+   node generate-decks.js --mode glossary --folder "animals"
+   node generate-decks.js --mode glossary --folder "animals" --direction-labels
+   node generate-decks.js --mode cloze --folder "Preterite"
+
+   # Backward-compatible interface
    # Generate cards for all folders WITHOUT direction labels (default)
    node generate-decks.js
 
@@ -86,6 +135,9 @@ npm install
    node generate-decks.js --direction-labels
    node generate-decks.js -d
    node generate-decks.js "animals" --direction-labels
+
+   # Generate CLOZE notes from TSV rows formatted as Text<TAB>Hint
+   node generate-decks.js "Preterite" --cloze
    ```
 
    **Using npm script:**

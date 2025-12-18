@@ -122,10 +122,11 @@ describe('AnkiGenerator', () => {
         test('should create note type with direction field', () => {
             const noteType = generator.createNoteType();
 
-            expect(noteType.name).toBe('Spanish Glossary');
-            expect(noteType.flds).toHaveLength(3); // Front, Back, Direction
+            expect(noteType.name).toBe('JW::Spanish Glossary v1');
+            expect(noteType.flds).toHaveLength(4);
             
             const fieldNames = noteType.flds.map(field => field.name);
+            expect(fieldNames).toContain('UID');
             expect(fieldNames).toContain('Front');
             expect(fieldNames).toContain('Back');
             expect(fieldNames).toContain('Direction');
@@ -138,6 +139,58 @@ describe('AnkiGenerator', () => {
             // Check CSS for direction styling
             expect(noteType.css).toContain('.direction');
             expect(noteType.css).toContain('font-style: italic');
+        });
+    });
+
+    describe('Cloze Mode', () => {
+        test('should create cloze note type with expected templates and fields', () => {
+            const clozeGenerator = new AnkiGenerator({
+                mode: 'cloze',
+                noteTypeName: 'Cloze for Preterite'
+            });
+
+            const noteType = clozeGenerator.createNoteType();
+
+            expect(noteType.name).toBe('Cloze for Preterite');
+            expect(noteType.type).toBe(1);
+
+            const fieldNames = noteType.flds.map(field => field.name);
+            expect(fieldNames).toEqual(['Text', 'Hint', 'Back']);
+
+            const template = noteType.tmpls[0];
+            expect(template.qfmt).toContain('{{cloze:Text}}');
+            expect(template.afmt).toContain('{{cloze:Text}}');
+            expect(template.qfmt).toContain('{{Hint}}');
+            expect(template.afmt).toContain('{{Hint}}');
+
+            expect(noteType.css).toContain('.cloze');
+            expect(noteType.css).toContain('.hint');
+        });
+
+        test('should generate one card per cloze index (c1, c2, ...)', async () => {
+            const clozeGenerator = new AnkiGenerator({
+                mode: 'cloze',
+                noteTypeName: 'Cloze for Preterite'
+            });
+
+            const notes = [
+                {
+                    type: 'cloze',
+                    deck: 'Preterite::Sentences::Test',
+                    text: 'Yo {{c1::fui}} al mercado y {{c2::compré}} pan.',
+                    hint: 'ir/comprar',
+                    back: '',
+                    uid: 'test-cloze-uid',
+                    tags: ['cloze', 'test']
+                }
+            ];
+
+            const db = await clozeGenerator.createSQLiteDatabase(notes);
+            const notesCount = db.exec('select count(*) as n from notes')[0].values[0][0];
+            const cardsRows = db.exec('select ord from cards order by ord')[0].values.map(r => r[0]);
+
+            expect(notesCount).toBe(1);
+            expect(cardsRows).toEqual([0, 1]);
         });
     });
 
