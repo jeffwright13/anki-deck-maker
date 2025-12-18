@@ -1,6 +1,6 @@
 {
   "name": "anki-deck-maker",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "",
   "main": "generate-decks.js",
   "directories": {
@@ -9,7 +9,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "generate": "node generate-decks.js"
+    "generate": "node generate-decks.js",
+    "anki:progress": "node scripts/anki-progress.js"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,221 @@
+Ayer yo {{c1::hablé}} con amigos.	hablar
+Ayer tú {{c1::hablaste}} con el médico.	hablar
+Ayer él {{c1::habló}} con la policía.	hablar
+Ayer ella {{c1::habló}} por teléfono.	hablar
+Ayer nosotros {{c1::hablamos}} en casa.	hablar
+Ayer ellos {{c1::hablaron}} en el trabajo.	hablar
+¿Qué tú {{c1::hablaste}} ayer?	hablar
+¿Con quién tú {{c1::hablaste}} ayer?	hablar
+¿Dónde tú {{c1::hablaste}} con ella?	hablar
+Esta mañana yo {{c1::hablé}} con mi madre.	hablar
+Esta mañana tú {{c1::hablaste}} con tu jefe.	hablar
+Ayer él {{c1::habló}} con los vecinos.	hablar
+Ayer ella {{c1::habló}} con amigos.	hablar
+Ayer nosotros {{c1::hablamos}} del trabajo.	hablar
+Ayer ellos {{c1::hablaron}} de la ciudad.	hablar
+El lunes yo {{c1::hablé}} con ella.	hablar
+
+Ayer yo {{c1::comí}} arroz.	comer
+Ayer tú {{c1::comiste}} pollo.	comer
+Ayer él {{c1::comió}} pan.	comer
+Ayer ella {{c1::comió}} pescado.	comer
+Ayer nosotros {{c1::comimos}} en casa.	comer
+Ayer ellos {{c1::comieron}} en el restaurante.	comer
+¿Qué tú {{c1::comiste}} ayer?	comer
+¿Dónde tú {{c1::comiste}} ayer?	comer
+¿Con quién tú {{c1::comiste}} ayer?	comer
+Esta mañana yo {{c1::comí}} fruta.	comer
+Esta mañana tú {{c1::comiste}} pan.	comer
+Ayer él {{c1::comió}} carne.	comer
+Ayer ella {{c1::comió}} sopa.	comer
+Ayer nosotros {{c1::comimos}} temprano.	comer
+Ayer ellos {{c1::comieron}} tarde.	comer
+El martes yo {{c1::comí}} bien.	comer
+
+El año pasado yo {{c1::viví}} en la ciudad.	vivir
+En 2020 tú {{c1::viviste}} en el apartamento.	vivir
+Durante un año él {{c1::vivió}} en la casa.	vivir
+Por dos años ella {{c1::vivió}} cerca del parque.	vivir
+Hasta 2015 nosotros {{c1::vivimos}} en el norte.	vivir
+De niños ellos {{c1::vivieron}} en el sur.	vivir
+¿Dónde tú {{c1::viviste}} antes?	vivir
+¿Cuánto tiempo tú {{c1::viviste}} aquí?	vivir
+¿Con quién tú {{c1::viviste}} en Denver?	vivir
+El mes pasado yo {{c1::viví}} tranquilo.	vivir
+Por tres años él {{c1::vivió}} solo.	vivir
+Durante ese tiempo ella {{c1::vivió}} feliz.	vivir
+Por seis meses nosotros {{c1::vivimos}} juntos.	vivir
+De 2010 a 2015 ellos {{c1::vivieron}} lejos.	vivir
+El primer año yo {{c1::viví}} mejor.	vivir
+Durante dos años tú {{c1::viviste}} aquí.	vivir
+
+Ayer yo {{c1::fui}} al trabajo.	ir
+Ayer tú {{c1::fuiste}} a la escuela.	ir
+Ayer él {{c1::fue}} al hospital.	ir
+Ayer ella {{c1::fue}} al mercado.	ir
+Ayer nosotros {{c1::fuimos}} al restaurante.	ir
+Ayer ellos {{c1::fueron}} a la ciudad.	ir
+¿Adónde tú {{c1::fuiste}} ayer?	ir
+¿Con quién tú {{c1::fuiste}} ayer?	ir
+¿Cuándo tú {{c1::fuiste}} al trabajo?	ir
+Esta mañana yo {{c1::fui}} a casa.	ir
+Esta mañana tú {{c1::fuiste}} al banco.	ir
+Ayer él {{c1::fue}} al parque.	ir
+Ayer ella {{c1::fue}} a la oficina.	ir
+Ayer nosotros {{c1::fuimos}} juntos.	ir
+Ayer ellos {{c1::fueron}} temprano.	ir
+El miércoles yo {{c1::fui}} al trabajo.	ir
+
+Ayer yo {{c1::estuve}} en casa.	estar
+Ayer tú {{c1::estuviste}} en el trabajo.	estar
+Ayer él {{c1::estuvo}} en el hospital.	estar
+Ayer ella {{c1::estuvo}} en la escuela.	estar
+Ayer nosotros {{c1::estuvimos}} en la ciudad.	estar
+Ayer ellos {{c1::estuvieron}} en el parque.	estar
+¿Dónde tú {{c1::estuviste}} ayer?	estar
+¿Con quién tú {{c1::estuviste}} ayer?	estar
+¿Cuánto tiempo tú {{c1::estuviste}} allí?	estar
+Esta mañana yo {{c1::estuve}} tranquilo.	estar
+Ayer él {{c1::estuvo}} cansado.	estar
+Ayer ella {{c1::estuvo}} feliz.	estar
+Ayer nosotros {{c1::estuvimos}} listos.	estar
+Ayer ellos {{c1::estuvieron}} ocupados.	estar
+El jueves yo {{c1::estuve}} mejor.	estar
+Ayer tú {{c1::estuviste}} enfermo.	estar
+
+Ayer yo {{c1::tuve}} tiempo.	tener
+Ayer tú {{c1::tuviste}} dinero.	tener
+Ayer él {{c1::tuvo}} un problema.	tener
+Ayer ella {{c1::tuvo}} razón.	tener
+Ayer nosotros {{c1::tuvimos}} una idea.	tener
+Ayer ellos {{c1::tuvieron}} trabajo.	tener
+¿Qué tú {{c1::tuviste}} ayer?	tener
+¿Cuánto tiempo tú {{c1::tuviste}} ayer?	tener
+¿Por qué tú {{c1::tuviste}} problemas?	tener
+Esta mañana yo {{c1::tuve}} tiempo.	tener
+Ayer él {{c1::tuvo}} miedo.	tener
+Ayer ella {{c1::tuvo}} suerte.	tener
+Ayer nosotros {{c1::tuvimos}} éxito.	tener
+Ayer ellos {{c1::tuvieron}} suerte.	tener
+El viernes yo {{c1::tuve}} paciencia.	tener
+Ayer tú {{c1::tuviste}} cuidado.	tener
+
+Ayer yo {{c1::hice}} la comida.	hacer
+Ayer tú {{c1::hiciste}} el trabajo.	hacer
+Ayer él {{c1::hizo}} el ejercicio.	hacer
+Ayer ella {{c1::hizo}} la cena.	hacer
+Ayer nosotros {{c1::hicimos}} el proyecto.	hacer
+Ayer ellos {{c1::hicieron}} la tarea.	hacer
+¿Qué tú {{c1::hiciste}} ayer?	hacer
+¿Dónde tú {{c1::hiciste}} eso?	hacer
+¿Por qué tú {{c1::hiciste}} eso?	hacer
+Esta mañana yo {{c1::hice}} café.	hacer
+Ayer él {{c1::hizo}} ruido.	hacer
+Ayer ella {{c1::hizo}} ejercicio.	hacer
+Ayer nosotros {{c1::hicimos}} planes.	hacer
+Ayer ellos {{c1::hicieron}} preguntas.	hacer
+El sábado yo {{c1::hice}} lo mejor.	hacer
+Ayer tú {{c1::hiciste}} bien.	hacer
+
+Ayer yo {{c1::pude}} ir al trabajo.	poder
+Ayer tú {{c1::pudiste}} comer arroz.	poder
+Ayer él {{c1::pudo}} hablar con ella.	poder
+Ayer ella {{c1::pudo}} entrar.	poder
+Ayer nosotros {{c1::pudimos}} terminar.	poder
+Ayer ellos {{c1::pudieron}} salir.	poder
+¿Por qué tú {{c1::pudiste}} ir?	poder
+¿Cómo tú {{c1::pudiste}} hacerlo?	poder
+¿Cuándo tú {{c1::pudiste}} salir?	poder
+Esta mañana yo {{c1::pude}} descansar.	poder
+Ayer él {{c1::pudo}} ayudar.	poder
+Ayer ella {{c1::pudo}} pagar.	poder
+Ayer nosotros {{c1::pudimos}} ganar.	poder
+Ayer ellos {{c1::pudieron}} entrar.	poder
+El domingo yo {{c1::pude}} aprender.	poder
+Ayer tú {{c1::pudiste}} decidir.	poder
+
+Ayer yo {{c1::quise}} ir a casa.	querer
+Ayer tú {{c1::quisiste}} comer pollo.	querer
+Ayer él {{c1::quiso}} hablar conmigo.	querer
+Ayer ella {{c1::quiso}} salir.	querer
+Ayer nosotros {{c1::quisimos}} descansar.	querer
+Ayer ellos {{c1::quisieron}} ayudar.	querer
+¿Qué tú {{c1::quisiste}} hacer ayer?	querer
+¿Por qué tú {{c1::quisiste}} salir?	querer
+¿Cuándo tú {{c1::quisiste}} ir?	querer
+Esta mañana yo {{c1::quise}} dormir.	querer
+Ayer él {{c1::quiso}} ganar.	querer
+Ayer ella {{c1::quiso}} aprender.	querer
+Ayer nosotros {{c1::quisimos}} viajar.	querer
+Ayer ellos {{c1::quisieron}} cambiar.	querer
+Anteayer yo {{c1::quise}} mejorar.	querer
+Ayer tú {{c1::quisiste}} ayudar.	querer
+
+Ayer yo {{c1::necesité}} ayuda.	necesitar
+Ayer tú {{c1::necesitaste}} tiempo.	necesitar
+Ayer él {{c1::necesitó}} dinero.	necesitar
+Ayer ella {{c1::necesitó}} apoyo.	necesitar
+Ayer nosotros {{c1::necesitamos}} información.	necesitar
+Ayer ellos {{c1::necesitaron}} comida.	necesitar
+¿Qué tú {{c1::necesitaste}} ayer?	necesitar
+¿Por qué tú {{c1::necesitaste}} ayuda?	necesitar
+¿Cuándo tú {{c1::necesitaste}} dinero?	necesitar
+Esta mañana yo {{c1::necesité}} tiempo.	necesitar
+Ayer él {{c1::necesitó}} descanso.	necesitar
+Ayer ella {{c1::necesitó}} agua.	necesitar
+Ayer nosotros {{c1::necesitamos}} ayuda.	necesitar
+Ayer ellos {{c1::necesitaron}} apoyo.	necesitar
+La semana pasada yo {{c1::necesité}} paciencia.	necesitar
+Ayer tú {{c1::necesitaste}} descanso.	necesitar
+
+Ayer yo {{c1::llevé}} el dinero.	llevar
+Ayer tú {{c1::llevaste}} la bolsa.	llevar
+Ayer él {{c1::llevó}} el libro.	llevar
+Ayer ella {{c1::llevó}} la ropa.	llevar
+Ayer nosotros {{c1::llevamos}} el equipo.	llevar
+Ayer ellos {{c1::llevaron}} los regalos.	llevar
+¿Qué tú {{c1::llevaste}} ayer?	llevar
+¿Dónde tú {{c1::llevaste}} eso?	llevar
+¿Por qué tú {{c1::llevaste}} la bolsa?	llevar
+Esta mañana yo {{c1::llevé}} café.	llevar
+Ayer él {{c1::llevó}} dinero.	llevar
+Ayer ella {{c1::llevó}} comida.	llevar
+Ayer nosotros {{c1::llevamos}} todo.	llevar
+Ayer ellos {{c1::llevaron}} todo.	llevar
+El mes pasado yo {{c1::llevé}} agua.	llevar
+Ayer tú {{c1::llevaste}} ropa.	llevar
+
+Ayer yo me {{c1::fui}} temprano.	irse
+Ayer tú te {{c1::fuiste}} a casa.	irse
+Ayer él se {{c1::fue}} del trabajo.	irse
+Ayer ella se {{c1::fue}} del mercado.	irse
+Ayer nosotros nos {{c1::fuimos}} juntos.	irse
+Ayer ellos se {{c1::fueron}} rápido.	irse
+¿A qué hora tú te {{c1::fuiste}} ayer?	irse
+¿Por qué tú te {{c1::fuiste}} temprano?	irse
+¿Con quién tú te {{c1::fuiste}} ayer?	irse
+Esta mañana yo me {{c1::fui}} temprano.	irse
+Ayer él se {{c1::fue}} solo.	irse
+Ayer ella se {{c1::fue}} sonriendo.	irse
+Ayer nosotros nos {{c1::fuimos}} tarde.	irse
+Ayer ellos se {{c1::fueron}} juntos.	irse
+El lunes yo me {{c1::fui}} temprano.	irse
+Ayer tú te {{c1::fuiste}} rápido.	irse
+La semana pasada yo me {{c1::fui}} temprano.	irse
+Ayer yo me {{c1::fui}} de la oficina.	irse
+
+Ayer yo {{c1::llamé}} a Juan.	llamar
+Ayer tú {{c1::llamaste}} a Carlos.	llamar
+Ayer él {{c1::llamó}} a Pedro.	llamar
+Ayer ella {{c1::llamó}} a María.	llamar
+Ayer nosotros {{c1::llamamos}} a nuestros amigos.	llamar
+Ayer ellos {{c1::llamaron}} a sus vecinos.	llamar
+¿A quién tú {{c1::llamaste}} ayer?	llamar
+¿Por qué tú {{c1::llamaste}} a tu jefe?	llamar
+¿Cuándo tú {{c1::llamaste}} al médico?	llamar
+Esta mañana yo {{c1::llamé}} a mi estudiante.	llamar
+Ayer él {{c1::llamó}} al gerente.	llamar
+Ayer ella {{c1::llamó}} a la artista.	llamar
+Ayer nosotros {{c1::llamamos}} a la familia.	llamar
+Ayer ellos {{c1::llamaron}} al equipo.	llamar
+Ayer tú {{c1::llamaste}} a tu amigo.	llamar
