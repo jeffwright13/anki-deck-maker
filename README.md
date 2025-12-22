@@ -173,9 +173,13 @@ node generate-decks.js [folder-name] [options]
 
 ### Options
 - `--help, -h`: Show detailed help message and usage examples
+- `--mode, -m`: Select generation mode: glossary (default) or cloze
+- `--folder, -f`: Restrict generation to a specific top-level folder under data/
+  - Use quotes for folder names with spaces: `--folder "Phonological Clusters"`
 - `--direction-labels, -d`: Enable direction labels on cards (e.g., "ES → EN")
   - **REQUIRES**: First row in TSV must contain labels
   - **Default**: Direction labels are DISABLED (safer, prevents lost cards)
+- `--cloze`: Legacy alias for: --mode cloze
 
 ### Examples
 ```bash
@@ -184,12 +188,19 @@ node generate-decks.js
 
 # Process specific folder WITHOUT direction labels
 node generate-decks.js animals
-node generate-decks.js "Spanish Stories"
+node generate-decks.js --folder animals
+node generate-decks.js --folder "Spanish Stories"
 
 # Process WITH direction labels (requires header row)
 node generate-decks.js --direction-labels
 node generate-decks.js -d
 node generate-decks.js animals --direction-labels
+node generate-decks.js --folder animals --direction-labels
+node generate-decks.js --folder "Phonological Clusters" -d
+
+# Process CLOZE notes from TSV rows formatted as Text<TAB>Hint
+node generate-decks.js "Preterite" --cloze
+node generate-decks.js --folder "Preterite" --mode cloze
 
 # Show help
 node generate-decks.js --help

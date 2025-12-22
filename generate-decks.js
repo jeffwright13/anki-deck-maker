@@ -327,7 +327,8 @@ function findTSVFiles(dir, basePath = '', targetFolder = null) {
     
     // If we have a target folder filter, only process that folder at the root level
     if (targetFolder && basePath === '') {
-        if (!items.includes(targetFolder)) {
+        const targetItem = items.find(item => item === targetFolder);
+        if (!targetItem) {
             console.log(`❌ Folder "${targetFolder}" not found in data/ directory`);
             return files;
         }
@@ -368,11 +369,13 @@ Anki Deck Maker - Universal Flashcard Generator
 
 USAGE:
   node generate-decks.js [--mode glossary|cloze] [--folder <TopLevelFolder>] [options]
+  node generate-decks.js --folder <TopLevelFolder> [options]
   node generate-decks.js [folder-name] [options]
 
 ARGUMENTS:
   folder-name    Optional: Generate cards only for specific top-level folder
                  If omitted, processes all folders in data/ directory
+                 NOTE: For folder names with spaces, use: --folder "Folder Name"
 
 OPTIONS:
   --help, -h              Show this help message
@@ -523,7 +526,7 @@ async function main() {
     // Generate .apkg file
     const generator = new AnkiGenerator({
         mode: includeCloze ? 'cloze' : 'glossary',
-        noteTypeName: includeCloze ? `Cloze for ${targetFolder || 'Generated'}` : undefined
+        noteTypeName: includeCloze ? 'JW::Spanish Cloze v1' : undefined
     });
     
     // Determine output filename based on processed folders
